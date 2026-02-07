@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+.venv
+env/
+venv/
+build/
+dist/
+*.spec
+
+# Project Specific
+config.json
+input.txt
+questions.json
+questions_with_answers.json
+generated_post_data.txt
+*.log
+
+# Editor
+.vscode/
+.idea/
