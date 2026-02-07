@@ -7,7 +7,11 @@
 ## English
 
 ### ⚠️ IMPORTANT: FOR CODE LEARNING ONLY
-**This project is strictly for programming educational purposes and code logic research.** It demonstrates how to integrate web scraping (BeautifulSoup), API communication (Requests), and Large Language Models (DeepSeek) into a cohesive Python workflow. **DO NOT use this tool for any actual academic activities.**
+**English:** This code was written in the past and is provided "as-is". Due to platform updates, its current functionality is **not guaranteed** to be working. It is strictly for programming educational purposes and code logic research.
+
+**中文：** 本项目代码编写于较早之前，现以“现状”提供。由于平台可能已更新，**不保证**其当前仍能正常运行。本项目严格仅限用于编程教学、研究代码逻辑及学术探讨。
+
+**DO NOT use this tool for any actual academic activities.**
 
 ### Disclaimer
 **This tool is for educational and research purposes only.**  
