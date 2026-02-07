@@ -31,6 +31,13 @@ A Python-based automation assistant for the ChaoXing platform. It leverages Beau
    - Run `python password.py` and enter a salt string to generate a corresponding password hash.
    - Fill both the `salt` and the generated `password` hash into `config.json`.
 
+### Supported Question Types
+The tool identifies and processes the following question types:
+- **Single Choice** (Type 0): Automatically maps AI answers to A, B, C, or D.
+- **Multiple Choice** (Type 1): Joins multiple options (e.g., "AB") without separators as per ChaoXing requirements.
+- **True/False** (Type 3): Maps AI keywords to `true` or `false`.
+- **Essay/Short Answer** (Type 4): Formats long text into HTML paragraphs or lists.
+
 ### Purpose of `password.py`
 `password.py` is a utility script used to generate the authorization password hash required by the main program. It takes a user-provided `salt`, applies a specific transformation, and produces a SHA-512 hash. This ensures that the software is used with the intended authorization parameters.
 
@@ -78,6 +85,13 @@ A Python-based automation assistant for the ChaoXing platform. It leverages Beau
    - 本工具使用 `salt` 进行内部授权校验。
    - 运行 `python password.py` 并输入一段字符串（Salt），程序将生成对应的密码哈希。
    - 将该 `salt` 字符串和生成的 `password` 哈希填入 `config.json`。
+
+### 支持题型
+本工具能够识别并处理以下题型：
+- **单选题** (类型 0)：自动将 AI 答案映射为 A、B、C 或 D。
+- **多选题** (类型 1)：根据超星要求，将多个选项拼接（如 "AB"），不含分隔符。
+- **判断题** (类型 3)：将 AI 关键词映射为 `true`（正确）或 `false`（错误）。
+- **简答题** (类型 4)：将长文本格式化为 HTML 段落或列表。
 
 ### `password.py` 的作用
 `password.py` 是一个辅助脚本，用于生成主程序所需的授权密码哈希。它接收用户输入的 `salt`，通过特定的逻辑转换后生成 SHA-512 哈希值。这确保了软件在预设的授权参数下运行。
