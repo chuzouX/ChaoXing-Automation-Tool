@@ -6,108 +6,78 @@
 
 ## English
 
+### ⚠️ IMPORTANT: FOR CODE LEARNING ONLY
+**This project is strictly for programming educational purposes and code logic research.** It demonstrates how to integrate web scraping (BeautifulSoup), API communication (Requests), and Large Language Models (DeepSeek) into a cohesive Python workflow. **DO NOT use this tool for any actual academic activities.**
+
 ### Disclaimer
 **This tool is for educational and research purposes only.**  
-The author does not encourage or support any form of academic misconduct. Using this tool may violate the Terms of Service of the ChaoXing (LearningX) platform and could lead to account suspension or academic penalties. The user assumes all responsibility for any consequences arising from the use of this software. The author shall not be held liable for any direct or indirect losses incurred.
+1. The author does not encourage, support, or condone any form of academic misconduct or cheating.
+2. Using this tool on live platforms may violate the Terms of Service of the ChaoXing (LearningX) platform and could lead to severe consequences, including account suspension or academic disciplinary action.
+3. **The user assumes all responsibility** for any consequences arising from the use of this software.
+4. The author shall not be held liable for any direct or indirect losses, penalties, or damages incurred.
+5. By downloading or using this code, you agree to use it only as a reference for learning Python automation and AI integration.
 
 ### Project Introduction
-A Python-based automation assistant for the ChaoXing platform. It leverages BeautifulSoup for question extraction and the DeepSeek LLM API for generating high-quality answers.
+An educational demonstration of a Python-based automation assistant. It showcases how to:
+- Use **BeautifulSoup** to parse complex HTML structures.
+- Integrate **DeepSeek LLM API** to process natural language queries.
+- Manage session-based HTTP requests and data submission.
 
 ### Features
-- Automated extraction of quiz/homework questions.
-- Support for multiple question types: Single choice, Multiple choice, True/False, and Essay.
-- AI-powered answer generation using DeepSeek.
-- Automated submission capability.
-
-### Configuration Tutorial
-1. **API Key**: Obtain your API key from the [DeepSeek Platform](https://platform.deepseek.com/).
-2. **Cookie**: 
-   - Log in to ChaoXing in your browser.
-   - Open Developer Tools (F12) -> Network tab.
-   - Refresh the page and find any request to `chaoxing.com`.
-   - Copy the value of the `Cookie` header from the Request Headers.
-3. **Salt & Password**: 
-   - The tool uses a `salt` for internal authorization verification.
-   - Run `python password.py` and enter a salt string to generate a corresponding password hash.
-   - Fill both the `salt` and the generated `password` hash into `config.json`.
+- Question extraction logic for structured and unstructured web content.
+- Support for mapping AI responses to specific API formats (Single/Multiple choice, etc.).
+- Demonstration of secure configuration management.
 
 ### Supported Question Types
-The tool identifies and processes the following question types:
-- **Single Choice** (Type 0): Automatically maps AI answers to A, B, C, or D.
-- **Multiple Choice** (Type 1): Joins multiple options (e.g., "AB") without separators as per ChaoXing requirements.
-- **True/False** (Type 3): Maps AI keywords to `true` or `false`.
-- **Essay/Short Answer** (Type 4): Formats long text into HTML paragraphs or lists.
+The tool demonstrates processing logic for:
+- **Single Choice** (Type 0): AI mapping to A/B/C/D.
+- **Multiple Choice** (Type 1): Concatenation logic (e.g., "AB").
+- **True/False** (Type 3): Keyword mapping to boolean states.
+- **Essay/Short Answer** (Type 4): HTML content generation.
 
-### Purpose of `password.py`
-`password.py` is a utility script used to generate the authorization password hash required by the main program. It takes a user-provided `salt`, applies a specific transformation, and produces a SHA-512 hash. This ensures that the software is used with the intended authorization parameters.
-
-### Quick Start
-1. **Clone the repository**:
-   ```bash
-   git clone git@github.com:chuzouX/ChaoXing-Automation-Tool.git
-   ```
-2. **Install dependencies**:
-   ```bash
-   pip install requests beautifulsoup4
-   ```
-3. **Configure**:
-   Copy `config.json.example` to `config.json` and fill in your DeepSeek API key, cookies, salt, and generated password.
-4. **Run**:
-   ```bash
-   python "chaoxing_by chuzouX.py"
-   ```
+### Configuration Tutorial
+1. **API Key**: For testing, obtain a key from [DeepSeek Platform](https://platform.deepseek.com/).
+2. **Cookie**: For learning request headers, find the `Cookie` in Browser DevTools -> Network.
+3. **Salt & Password**: 
+   - Uses `salt` for local verification logic.
+   - Run `python password.py` to see how SHA-512 hashing is implemented.
 
 ---
 
 ## 中文
 
+### ⚠️ 重要说明：仅用于代码学习
+**本项目严格仅限用于编程教学、研究代码逻辑及学术探讨。** 它展示了如何将网页爬虫 (BeautifulSoup)、API 通信 (Requests) 以及大语言模型 (DeepSeek) 整合到 Python 工作流中。**严禁将此工具用于任何真实的课程学习、测验或考试。**
+
 ### 免责声明
 **本工具仅供教育与研究使用。**  
-作者不鼓励也不支持任何形式的学术不端行为。使用本工具可能违反超星（学习通）平台的服务条款，并可能导致账号封禁或学术处分。用户需自行承担因使用本软件而产生的一切后果。作者对因使用本工具而造成的任何直接或间接损失概不负责。
+1. 作者不鼓励、不支持、也不容忍任何形式的学术不端或作弊行为。
+2. 在实际平台使用此工具可能违反超星（学习通）平台的服务条款，并可能导致严重后果，包括但不限于账号封禁或学术处分。
+3. **用户需自行承担**因使用本软件而产生的一切后果。
+4. 作者对因使用本工具而造成的任何直接或间接损失、处分或损害概不负责。
+5. 下载或使用本代码即表示您同意仅将其作为学习 Python 自动化和 AI 集成的参考资料。
 
 ### 项目介绍
-一个基于 Python 的超星（学习通）平台自动化辅助工具。它利用 BeautifulSoup 进行题目抓取，并集成 DeepSeek 大语言模型 API 生成高质量答案。
+一个用于教学演示的 Python 自动化辅助案例。它展示了以下技术实现：
+- 使用 **BeautifulSoup** 解析复杂的 HTML 结构。
+- 集成 **DeepSeek LLM API** 处理自然语言查询。
+- 管理基于 Session 的 HTTP 请求与数据提交。
 
 ### 功能特性
-- 自动抓取测验/作业题目。
-- 支持多种题型：单选、多选、判断、简答。
-- 使用 DeepSeek AI 生成答案。
-- 支持自动化提交功能。
-
-### 配置教程
-1. **API Key**: 从 [DeepSeek 开放平台](https://platform.deepseek.com/) 获取您的 API Key。
-2. **Cookie**: 
-   - 在浏览器中登录学习通。
-   - 打开开发者工具 (F12) -> 网络 (Network) 选项卡。
-   - 刷新页面，找到任何指向 `chaoxing.com` 的请求。
-   - 从请求头 (Request Headers) 中复制 `Cookie` 的值。
-3. **Salt（盐值）与密码**: 
-   - 本工具使用 `salt` 进行内部授权校验。
-   - 运行 `python password.py` 并输入一段字符串（Salt），程序将生成对应的密码哈希。
-   - 将该 `salt` 字符串和生成的 `password` 哈希填入 `config.json`。
+- 针对结构化和非结构化网页内容的题目抓取逻辑。
+- 将 AI 响应映射到特定 API 格式（单选/多选等）的逻辑。
+- 演示安全的配置管理方案。
 
 ### 支持题型
-本工具能够识别并处理以下题型：
-- **单选题** (类型 0)：自动将 AI 答案映射为 A、B、C 或 D。
-- **多选题** (类型 1)：根据超星要求，将多个选项拼接（如 "AB"），不含分隔符。
-- **判断题** (类型 3)：将 AI 关键词映射为 `true`（正确）或 `false`（错误）。
-- **简答题** (类型 4)：将长文本格式化为 HTML 段落或列表。
+本工具演示了以下题型的处理逻辑：
+- **单选题** (类型 0)：AI 结果映射为 A/B/C/D。
+- **多选题** (类型 1)：无符号拼接逻辑（如 "AB"）。
+- **判断题** (类型 3)：关键词映射为布尔状态。
+- **简答题** (类型 4)：HTML 内容生成与格式化。
 
-### `password.py` 的作用
-`password.py` 是一个辅助脚本，用于生成主程序所需的授权密码哈希。它接收用户输入的 `salt`，通过特定的逻辑转换后生成 SHA-512 哈希值。这确保了软件在预设的授权参数下运行。
-
-### 快速开始
-1. **克隆仓库**:
-   ```bash
-   git clone git@github.com:chuzouX/ChaoXing-Automation-Tool.git
-   ```
-2. **安装依赖**:
-   ```bash
-   pip install requests beautifulsoup4
-   ```
-3. **配置**:
-   将 `config.json.example` 复制为 `config.json`，并填入您的 DeepSeek API Key、学习通 Cookie、Salt 以及生成的密码哈希。
-4. **运行**:
-   ```bash
-   python "chaoxing_by chuzouX.py"
-   ```
+### 配置教程
+1. **API Key**: 仅供测试，从 [DeepSeek 开放平台](https://platform.deepseek.com/) 获取。
+2. **Cookie**: 用于学习请求头构造，从浏览器开发者工具 -> 网络中获取。
+3. **Salt 与密码**: 
+   - 展示本地校验逻辑。
+   - 运行 `python password.py` 查看 SHA-512 哈希的实现方式。
