@@ -19,6 +19,21 @@ A Python-based automation assistant for the ChaoXing platform. It leverages Beau
 - AI-powered answer generation using DeepSeek.
 - Automated submission capability.
 
+### Configuration Tutorial
+1. **API Key**: Obtain your API key from the [DeepSeek Platform](https://platform.deepseek.com/).
+2. **Cookie**: 
+   - Log in to ChaoXing in your browser.
+   - Open Developer Tools (F12) -> Network tab.
+   - Refresh the page and find any request to `chaoxing.com`.
+   - Copy the value of the `Cookie` header from the Request Headers.
+3. **Salt & Password**: 
+   - The tool uses a `salt` for internal authorization verification.
+   - Run `python password.py` and enter a salt string to generate a corresponding password hash.
+   - Fill both the `salt` and the generated `password` hash into `config.json`.
+
+### Purpose of `password.py`
+`password.py` is a utility script used to generate the authorization password hash required by the main program. It takes a user-provided `salt`, applies a specific transformation, and produces a SHA-512 hash. This ensures that the software is used with the intended authorization parameters.
+
 ### Quick Start
 1. **Clone the repository**:
    ```bash
@@ -29,7 +44,7 @@ A Python-based automation assistant for the ChaoXing platform. It leverages Beau
    pip install requests beautifulsoup4
    ```
 3. **Configure**:
-   Copy `config.json.example` to `config.json` and fill in your DeepSeek API key and ChaoXing cookies.
+   Copy `config.json.example` to `config.json` and fill in your DeepSeek API key, cookies, salt, and generated password.
 4. **Run**:
    ```bash
    python "chaoxing_by chuzouX.py"
@@ -52,6 +67,21 @@ A Python-based automation assistant for the ChaoXing platform. It leverages Beau
 - 使用 DeepSeek AI 生成答案。
 - 支持自动化提交功能。
 
+### 配置教程
+1. **API Key**: 从 [DeepSeek 开放平台](https://platform.deepseek.com/) 获取您的 API Key。
+2. **Cookie**: 
+   - 在浏览器中登录学习通。
+   - 打开开发者工具 (F12) -> 网络 (Network) 选项卡。
+   - 刷新页面，找到任何指向 `chaoxing.com` 的请求。
+   - 从请求头 (Request Headers) 中复制 `Cookie` 的值。
+3. **Salt（盐值）与密码**: 
+   - 本工具使用 `salt` 进行内部授权校验。
+   - 运行 `python password.py` 并输入一段字符串（Salt），程序将生成对应的密码哈希。
+   - 将该 `salt` 字符串和生成的 `password` 哈希填入 `config.json`。
+
+### `password.py` 的作用
+`password.py` 是一个辅助脚本，用于生成主程序所需的授权密码哈希。它接收用户输入的 `salt`，通过特定的逻辑转换后生成 SHA-512 哈希值。这确保了软件在预设的授权参数下运行。
+
 ### 快速开始
 1. **克隆仓库**:
    ```bash
@@ -62,7 +92,7 @@ A Python-based automation assistant for the ChaoXing platform. It leverages Beau
    pip install requests beautifulsoup4
    ```
 3. **配置**:
-   将 `config.json.example` 复制为 `config.json`，并填入您的 DeepSeek API Key 和学习通 Cookie。
+   将 `config.json.example` 复制为 `config.json`，并填入您的 DeepSeek API Key、学习通 Cookie、Salt 以及生成的密码哈希。
 4. **运行**:
    ```bash
    python "chaoxing_by chuzouX.py"
